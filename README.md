@@ -14,6 +14,8 @@ A simple number guessing game where the player tries to guess a randomly generat
 4. **Feedback via Alerts**: Provide appropriate feedback through alerts based on whether the guess is correct, too high, or too low.
 5. **Increment Guess Counter**: Count and increment the number of guesses after each incorrect attempt.
 
+<img src="https://github.com/shwetadd33/javascript_project_guess_my_number/blob/main/Guess_My_Number/HTML_Page_Screenshot/image.jpg?raw=true" alt="Game Image" width="400" height="400">
+
 ## Usage
 To play the game, follow these steps:
 1. Clone the repository to your local machine.
