@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 /*
 // Quick way to select the elememts from HTML page
 console.log(document.querySelector('.message').textContent);
@@ -26,59 +26,58 @@ let highScore = 0;
 // Project: "Game : Guess the correct secret number"
 
 // CASE: logic for "check" button on the webpage
-document.querySelector('.check').addEventListener('click', function () {
-  const guess = Number(document.querySelector('.guess').value);
+document.querySelector(".check").addEventListener("click", function () {
+  const guess = Number(document.querySelector(".guess").value);
   console.log(guess, typeof guess);
   //CASE: user does not enter any number for guessing
   if (!guess) {
-    document.querySelector('.message').textContent = 'No Number :(';
+    document.querySelector(".message").textContent = "No Number :(";
   } else if (guess === secretNumber) {
     //CASE: user guesses correct secret number
-    document.querySelector('.message').textContent = 'Correct Number!!';
-    document.querySelector('.number').textContent = secretNumber;
+    document.querySelector(".message").textContent = "Correct Number!!";
+    document.querySelector(".number").textContent = secretNumber;
 
-    document.querySelector('body').style.backgroundColor = '#60b347';
-    document.querySelector('.number').style.width = '30rem';
+    document.querySelector("body").style.backgroundColor = "#60b347";
+    document.querySelector(".number").style.width = "30rem";
     console.log(`the score is ${score}`);
 
     // Setting the highscore on the webpage
     if (score > highScore) {
-      document.querySelector('.highscore').textContent = score;
-    } else {
-      document.querySelector('.highscore').textContent = highScore;
+      document.querySelector(".highscore").textContent = score;
+      highScore = score;
     }
   } else if (guess < secretNumber) {
     // CASE: entered number is lower than the secret number
     if (score > 1) {
-      document.querySelector('.message').textContent = 'Too Low :(';
+      document.querySelector(".message").textContent = "Too Low :(";
       score--;
-      document.querySelector('.score').textContent = score;
+      document.querySelector(".score").textContent = score;
     } else {
-      document.querySelector('.message').textContent = 'You lost the game :(';
-      document.querySelector('.score').textContent = 0;
+      document.querySelector(".message").textContent = "You lost the game :(";
+      document.querySelector(".score").textContent = 0;
     }
   } else if (guess > secretNumber) {
     // CASE: entered number is higher than the secret number
     if (score > 1) {
-      document.querySelector('.message').textContent = 'Too High :(';
+      document.querySelector(".message").textContent = "Too High :(";
       score--;
-      document.querySelector('.score').textContent = score;
+      document.querySelector(".score").textContent = score;
     } else {
-      document.querySelector('.message').textContent = 'You lost the game :(';
-      document.querySelector('.score').textContent = 0;
+      document.querySelector(".message").textContent = "You lost the game :(";
+      document.querySelector(".score").textContent = 0;
     }
   }
 });
 
 // Case: logic for "Again" button on the webpage - it resets the whole game parameters to begin the new game.
 
-document.querySelector('.again').addEventListener('click', function () {
+document.querySelector(".again").addEventListener("click", function () {
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
-  document.querySelector('.message').textContent = 'Start guessing...';
-  document.querySelector('.score').textContent = 20;
-  document.querySelector('.number').textContent = '?';
-  document.querySelector('body').style.backgroundColor = '#222';
-  document.querySelector('.number').style.width = '15rem';
-  document.querySelector('.guess').value = '';
+  document.querySelector(".message").textContent = "Start guessing...";
+  document.querySelector(".score").textContent = 20;
+  document.querySelector(".number").textContent = "?";
+  document.querySelector("body").style.backgroundColor = "#222";
+  document.querySelector(".number").style.width = "15rem";
+  document.querySelector(".guess").value = "";
 });
